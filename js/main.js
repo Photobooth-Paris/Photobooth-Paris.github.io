@@ -212,11 +212,11 @@
 
 	};
 
-	// Team
-	var teamAnimate = function() {
+	// devices
+	var devicesAnimate = function() {
 
-		if ( $('#team').length > 0 ) {	
-			$('#team .to-animate').each(function( k ) {
+		if ( $('#fh5co-our-devices').length > 0 ) {	
+			$('#fh5co-our-devices .to-animate').each(function( k ) {
 				
 				var el = $(this);
 				
@@ -228,50 +228,15 @@
 		}
 
 	};
-	var teamWayPoint = function() {
+	var devicesWayPoint = function() {
 
-		if ( $('#team').length > 0 ) {
-			$('#team').waypoint( function( direction ) {
+		if ( $('#fh5co-our-devices').length > 0 ) {
+			$('#fh5co-our-devices').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this).hasClass('animated') ) {
 
 
-					setTimeout(teamAnimate, 200);
-
-					
-					$(this.element).addClass('animated');
-						
-				}
-			} , { offset: '95%' } );
-		}
-
-	};
-
-	// Services
-	var servicesAnimate = function() {
-
-		if ( $('#fh5co-our-services').length > 0 ) {	
-			$('#fh5co-our-services .to-animate').each(function( k ) {
-				
-				var el = $(this);
-				
-				setTimeout ( function () {
-					el.addClass('fadeInUp animated');
-				},  k * 200, 'easeInOutExpo' );
-				
-			});
-		}
-
-	};
-	var servicesWayPoint = function() {
-
-		if ( $('#fh5co-our-services').length > 0 ) {
-			$('#fh5co-our-services').waypoint( function( direction ) {
-										
-				if( direction === 'down' && !$(this).hasClass('animated') ) {
-
-
-					setTimeout(servicesAnimate, 200);
+					setTimeout(devicesAnimate, 200);
 
 					
 					$(this.element).addClass('animated');
@@ -451,8 +416,7 @@
 		navigationSection();
 
 		aboutWayPoint();
-		teamWayPoint();
-		servicesWayPoint();
+		devicesWayPoint();
 		featuresWayPoint();
 		testimonialsWayPoint();
 		pricingWayPoint();

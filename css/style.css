@@ -279,7 +279,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 
-#fh5co-our-services,
+#fh5co-our-devices,
 #fh5co-about-us,
 #fh5co-features,
 #fh5co-testimonials,
@@ -288,7 +288,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 7em 0;
 }
 @media screen and (max-width: 480px) {
-  #fh5co-our-services,
+  #fh5co-our-devices,
   #fh5co-about-us,
   #fh5co-features,
   #fh5co-testimonials,
@@ -448,12 +448,12 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-#fh5co-our-services,
+#fh5co-our-devices,
 #fh5co-press {
   background: #f4f4f4;
 }
 
-#fh5co-our-services .box {
+#fh5co-our-devices .box {
   padding: 30px;
   background: #fff;
   text-align: center;
@@ -462,12 +462,12 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 @media screen and (max-width: 992px) {
-  #fh5co-our-services .box {
+  #fh5co-our-devices .box {
     min-height: inherit;
     margin-bottom: 60px;
   }
 }
-#fh5co-our-services .box .icon {
+#fh5co-our-devices .box .icon {
   width: 85px;
   height: 85px;
   margin: 0 auto;
@@ -482,35 +482,35 @@ h1, h2, h3, h4, h5, h6 {
   display: table;
   text-align: center;
 }
-#fh5co-our-services .box .icon > span {
+#fh5co-our-devices .box .icon > span {
   display: table-cell;
   vertical-align: middle;
 }
-#fh5co-our-services .box .icon > span i {
+#fh5co-our-devices .box .icon > span i {
   font-size: 40px;
   color: #fff !important;
   margin: 0;
   padding: 0;
 }
-#fh5co-our-services .box .icon.colored-1 {
+#fh5co-our-devices .box .icon.colored-1 {
   background: #2aaf67;
 }
-#fh5co-our-services .box .icon.colored-2 {
+#fh5co-our-devices .box .icon.colored-2 {
   background: #00bff3;
 }
-#fh5co-our-services .box .icon.colored-3 {
+#fh5co-our-devices .box .icon.colored-3 {
   background: #f26522;
 }
-#fh5co-our-services .box .icon.colored-4 {
+#fh5co-our-devices .box .icon.colored-4 {
   background: #e52b50;
 }
-#fh5co-our-services .box .icon.colored-5 {
+#fh5co-our-devices .box .icon.colored-5 {
   background: #2fc5cc;
 }
-#fh5co-our-services .box .icon.colored-6 {
+#fh5co-our-devices .box .icon.colored-6 {
   background: #6173f4;
 }
-#fh5co-our-services .box .step-number {
+#fh5co-our-devices .box .step-number {
   font-size: 16px;
   display: block;
   color: #d1d1d1;
@@ -519,7 +519,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-bottom: 10px;
 }
-#fh5co-our-services .box h3 {
+#fh5co-our-devices .box h3 {
   margin: 0 0 20px 0;
   padding: 0;
   font-weight: 400;
