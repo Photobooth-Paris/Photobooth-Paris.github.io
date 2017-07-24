@@ -31,11 +31,11 @@
 			setTimeout(function(){
 				var current = elem.item.index;
 				$(elem.target).find(".owl-item").eq(current).find(".to-animate").addClass('fadeInUp animated');
-			}, 700);
+			}, 500);
 			setTimeout(function(){
 				var current = elem.item.index;
 				$(elem.target).find(".owl-item").eq(current).find(".to-animate-2").addClass('fadeInUp animated');
-			}, 900);
+			}, 700);
      	});
 		owl.owlCarousel({
 			items: 1,
@@ -101,7 +101,7 @@
 			var section = $(this).data('nav-section'),
 				navbar = $('#navbar');
 		    $('html, body').animate({
-		        scrollTop: $('[data-section="' + section + '"]').offset().top
+		        scrollTop: $('[data-section="' + section + '"]').offset().top - navbar.height()
 		    }, 500);
 
 		    if ( navbar.is(':visible')) {
@@ -177,121 +177,6 @@
 
 	// Animations
 
-	// About Us
-	var aboutAnimate = function() {
-
-		if ( $('#about-us').length > 0 ) {	
-			$('#about-us .to-animate').each(function( k ) {
-				
-				var el = $(this);
-				
-				setTimeout ( function () {
-					el.addClass('fadeInUp animated');
-				},  k * 200, 'easeInOutExpo' );
-				
-			});
-		}
-
-	};
-	var aboutWayPoint = function() {
-
-		if ( $('#about-us').length > 0 ) {
-			$('#about-us').waypoint( function( direction ) {
-										
-				if( direction === 'down' && !$(this).hasClass('animated') ) {
-
-
-					setTimeout(aboutAnimate, 200);
-
-					
-					$(this.element).addClass('animated');
-						
-				}
-			} , { offset: '95%' } );
-		}
-
-	};
-
-	// devices
-	var devicesAnimate = function() {
-
-		if ( $('#fh5co-our-devices').length > 0 ) {	
-			$('#fh5co-our-devices .to-animate').each(function( k ) {
-				
-				var el = $(this);
-				
-				setTimeout ( function () {
-					el.addClass('fadeInUp animated');
-				},  k * 200, 'easeInOutExpo' );
-				
-			});
-		}
-
-	};
-	var devicesWayPoint = function() {
-
-		if ( $('#fh5co-our-devices').length > 0 ) {
-			$('#fh5co-our-devices').waypoint( function( direction ) {
-										
-				if( direction === 'down' && !$(this).hasClass('animated') ) {
-
-
-					setTimeout(devicesAnimate, 200);
-
-					
-					$(this.element).addClass('animated');
-						
-				}
-			} , { offset: '95%' } );
-		}
-
-	};
-
-
-	// Features
-	var featuresAnimate = function() {
-
-		if ( $('#fh5co-features').length > 0 ) {	
-			$('#fh5co-features .to-animate').each(function( k ) {
-				
-				var el = $(this);
-				
-				setTimeout ( function () {
-					el.addClass('fadeInUp animated');
-				},  k * 200, 'easeInOutExpo' );
-				
-			});
-		}
-
-	};
-	var featuresWayPoint = function() {
-
-		if ( $('#fh5co-features').length > 0 ) {
-			$('#fh5co-features').waypoint( function( direction ) {
-										
-				if( direction === 'down' && !$(this).hasClass('animated') ) {
-
-
-					setTimeout(function(){
-						$('.animate-features-1').addClass('animated fadeIn');
-					}, 100);
-					setTimeout(function(){
-						$('.animate-features-2').addClass('animated fadeIn');
-					}, 200);
-					setTimeout(featuresAnimate, 500);
-					setTimeout(function(){
-						$('.animate-features-3').addClass('animated fadeInUp');
-					}, 1400);
-
-					
-					$(this.element).addClass('animated');
-						
-				}
-			} , { offset: '95%' } );
-		}
-
-	};
-
 
 	// testimonials
 	var testimonialsAnimate = function() {
@@ -364,47 +249,6 @@
 
 	};
 
-	// Pricing
-	var pressAnimate = function() {
-
-		if ( $('#fh5co-press').length > 0 ) {	
-			$('#fh5co-press .to-animate').each(function( k ) {
-				
-				var el = $(this);
-				
-				setTimeout ( function () {
-					el.addClass('fadeInUp animated');
-				},  k * 200, 'easeInOutExpo' );
-				
-			});
-		}
-
-	};
-	var pressWayPoint = function() {
-
-		if ( $('#fh5co-press').length > 0 ) {
-			$('#fh5co-press').waypoint( function( direction ) {
-										
-					setTimeout(function(){
-						$('.animate-press-1').addClass('animated fadeIn');
-					}, 200);
-					setTimeout(function(){
-						$('.animate-press-2').addClass('animated fadeIn');
-					}, 300);
-					setTimeout(pressAnimate, 700);
-					
-					
-					$(this.element).addClass('animated');
-						
-			
-			} , { offset: '95%' } );
-		}
-
-	};
-
-
-	
-	
 
 	// Document on load.
 	$(function(){
@@ -415,13 +259,8 @@
 		windowScroll();
 		navigationSection();
 
-		aboutWayPoint();
-		devicesWayPoint();
-		featuresWayPoint();
 		testimonialsWayPoint();
 		pricingWayPoint();
-		pressWayPoint();
-
 	});
 
 
