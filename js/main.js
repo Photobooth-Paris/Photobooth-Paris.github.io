@@ -133,7 +133,6 @@
 		$section.waypoint(function(direction) {
 		  	if (direction === 'down') {
 		    	navActive($(this.element).data('section'));
-		    
 		  	}
 		}, {
 		  	offset: '150px'
