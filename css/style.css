@@ -454,9 +454,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-device .box {
+  margin-bottom: 3em;
   padding: 30px;
-  text-align: center;
   position: relative;
+  text-align: center;
 }
 @media screen and (max-width: 992px) {
   .section-device .box {

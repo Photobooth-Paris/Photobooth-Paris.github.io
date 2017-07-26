@@ -97,18 +97,20 @@
 	// Page Nav
 	var clickMenu = function() {
 
-		$('a:not([class="external"])').click(function(event){
+		$('a[data-nav-section]').click(function(event){
 			var section = $(this).data('nav-section'),
+				navbarContainer = $('#fh5co-header'),
 				navbar = $('#navbar');
-		    $('html, body').animate({
-		        scrollTop: $('[data-section="' + section + '"]').offset().top - navbar.height()
-		    }, 500);
 
-		    if ( navbar.is(':visible')) {
+		    if (navbar.is(':visible')) {
 		    	navbar.removeClass('in');
 		    	navbar.attr('aria-expanded', 'false');
 		    	$('.js-fh5co-nav-toggle').removeClass('active');
 		    }
+
+		    $('html, body').animate({
+		        scrollTop: $('[data-section="' + section + '"]').offset().top - navbarContainer.height()
+		    }, 500);
 
 		    event.preventDefault();
 		    return false;
