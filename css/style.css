@@ -541,6 +541,10 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+.section-device .box.prices .price-box .pricing-info li.plus {
+  color: red;
+}
+
 .fh5co-nav-toggle {
   width: 25px;
   height: 25px;
