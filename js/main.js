@@ -130,7 +130,7 @@
 	};
 	var navigationSection = function() {
 
-		var $section = $('div[data-section]');
+		var $section = $('div[data-section]:not(.disabled)');
 		
 		$section.waypoint(function(direction) {
 		  	if (direction === 'down') {
