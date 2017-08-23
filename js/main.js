@@ -174,7 +174,18 @@
 		});
 	};
 
+	// Ordering
+	function bindOrdering() {
+		Tawk_API.onLoad = function() {
+			$('.btn-order').on('click', function(e) {
+				e.preventDefault();
 
+				if(!Tawk_API.isVisitorEngaged()) {
+					Tawk_API.maximize();
+				}
+			});
+		};
+	};
 
 	// Animations
 
@@ -221,6 +232,7 @@
 		clickMenu();
 		windowScroll();
 		navigationSection();
+		bindOrdering();
 
 		testimonialsWayPoint();
 	});
