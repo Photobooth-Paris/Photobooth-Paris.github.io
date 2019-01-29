@@ -178,9 +178,8 @@
 	function bindOrdering() {
 		Tawk_API.onLoad = function() {
 			$('.btn-order').on('click', function(e) {
-				e.preventDefault();
-
 				if(!Tawk_API.isVisitorEngaged()) {
+					e.preventDefault();
 					Tawk_API.maximize();
 				}
 			});
