@@ -76,9 +76,6 @@
 		<!--[if lt IE 9]>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
-		
-		<meta name="google-site-verification" content="yEuH7xJS_tkjHn37ZJQCDYAUN2tqllohYKBtVosPhaU" />
-
 	</head>
 	<body>
 		<header role="banner" id="fh5co-header">
@@ -439,8 +436,17 @@
 		<!-- Main JS -->
 		<script src="js/main.js"></script>
 
-		<!--Start of Hotjar & Tawk.to Script-->
+		<!-- Start of Analytics Scripts -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132416924-1"></script>
 		<script type="text/javascript">
+			(function GoogleAnalytics(){
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', 'UA-132416924-1');
+			})();
+
 			(function(h,o,t,j,a,r){
 				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
 				h._hjSettings={hjid:578630,hjsv:5};
@@ -460,7 +466,6 @@
 				s0.parentNode.insertBefore(s1,s0);
 			})();
 		</script>
-		<!--End of Hotjar & Tawk.to Script-->
-
+		<!-- End of Analytics Scripts -->
 	</body>
 </html>
