@@ -176,15 +176,17 @@
 
 	// Ordering
 	function bindOrdering() {
-		var orderModal = $('#orderModal');
-
-		// By default send a mail
-		var onValidate = function(e, data) {
+		function updateMailtoLink(e, data) {
 			var url = 'mailto:pierre@photobooth.paris?subject=Informations'
 			url += '&body=' + encodeURIComponent('Contact: ' + data.contact + '\n\nMessage:' + data.message);
 
 			$(e.delegateTarget).attr('href', url);
-		};
+		}
+
+		var orderModal = $('#orderModal');
+
+		// By default send a mail
+		var onValidate = updateMailtoLink;
 
 		// If available use chat !
 		Tawk_API.onLoad = function() {
@@ -197,7 +199,12 @@
 				alert.addClass('active');
 				setTimeout(alert.removeClass.bind(alert, 'active'), 5000);
 
-				Tawk_API.maximize();
+				if (Tawk_API.getStatus() !== 'offline') {
+					Tawk_API.maximize();
+				}
+				else {
+					updateMailtoLink(e, data);
+				}
 			};
 		};
 
