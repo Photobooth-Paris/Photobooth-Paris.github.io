@@ -572,6 +572,18 @@ h1, h2, h3, h4, h5, h6 {
   color: red;
 }
 
+#thxMessageAlert {
+  display: none;
+  left: 0;
+  margin: 0 auto;
+  position: fixed;
+  right: 0;
+  top: 30%;
+  width: 50%;
+}
+
+#thxMessageAlert.active { display: block; }
+
 .fh5co-nav-toggle {
   width: 25px;
   height: 25px;

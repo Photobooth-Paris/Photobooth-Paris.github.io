@@ -8,10 +8,10 @@
 	};
 
 	var isiPhone = function(){
-	    return (
+		return (
 			(navigator.platform.indexOf("iPhone") != -1) || 
 			(navigator.platform.indexOf("iPod") != -1)
-	    );
+		);
 	};
 
 
@@ -36,23 +36,23 @@
 				var current = elem.item.index;
 				$(elem.target).find(".owl-item").eq(current).find(".to-animate-2").addClass('fadeInUp animated');
 			}, 700);
-     	});
+	 	});
 		owl.owlCarousel({
 			items: 1,
-		    loop: true,
-		    margin: 0,
-		    responsiveClass: true,
-		    nav: true,
-		    dots: true,
-		    autoHeight: true,
-		    smartSpeed: 500,
-		    autoplay: true,
+			loop: true,
+			margin: 0,
+			responsiveClass: true,
+			nav: true,
+			dots: true,
+			autoHeight: true,
+			smartSpeed: 500,
+			autoplay: true,
 			autoplayTimeout: 5000,
 			autoplayHoverPause: true,
-		    navText: [	
-		      "<i class='icon-arrow-left2 owl-direction'></i>",
-		      "<i class='icon-arrow-right2 owl-direction'></i>"
-	     	]
+			navText: [	
+				"<i class='icon-arrow-left2 owl-direction'></i>",
+				"<i class='icon-arrow-right2 owl-direction'></i>"
+		 	]
 		});
 
 	};
@@ -102,18 +102,18 @@
 				navbarContainer = $('#fh5co-header'),
 				navbar = $('#navbar');
 
-		    if (navbar.is(':visible')) {
-		    	navbar.removeClass('in');
-		    	navbar.attr('aria-expanded', 'false');
-		    	$('.js-fh5co-nav-toggle').removeClass('active');
-		    }
+			if (navbar.is(':visible')) {
+				navbar.removeClass('in');
+				navbar.attr('aria-expanded', 'false');
+				$('.js-fh5co-nav-toggle').removeClass('active');
+			}
 
-		    $('html, body').animate({
-		        scrollTop: $('[data-section="' + section + '"]').offset().top - navbarContainer.height()
-		    }, 500);
+			$('html, body').animate({
+				scrollTop: $('[data-section="' + section + '"]').offset().top - navbarContainer.height()
+			}, 500);
 
-		    event.preventDefault();
-		    return false;
+			event.preventDefault();
+			return false;
 		});
 
 	};
@@ -134,7 +134,7 @@
 		
 		$section.waypoint(function(direction) {
 		  	if (direction === 'down') {
-		    	navActive($(this.element).data('section'));
+				navActive($(this.element).data('section'));
 		  	}
 		}, {
 		  	offset: '150px'
@@ -142,7 +142,7 @@
 
 		$section.waypoint(function(direction) {
 		  	if (direction === 'up') {
-		    	navActive($(this.element).data('section'));
+				navActive($(this.element).data('section'));
 		  	}
 		}, {
 		  	offset: function() { return -$(this.element).height() + 155; }
@@ -176,15 +176,54 @@
 
 	// Ordering
 	function bindOrdering() {
-		Tawk_API.onLoad = function() {
-			$('.btn-order').on('click', function(e) {
-				e.preventDefault();
+		var orderModal = $('#orderModal');
 
-				if(!Tawk_API.isVisitorEngaged()) {
-					Tawk_API.maximize();
-				}
-			});
+		// By default send a mail
+		var onValidate = function(e, data) {
+			var url = 'mailto:pierre@photobooth.paris?subject=Informations'
+			url += '&body=' + encodeURIComponent('Contact: ' + data.contact + '\n\nMessage:' + data.message);
+
+			$(e.delegateTarget).attr('href', url);
 		};
+
+		// If available use chat !
+		Tawk_API.onLoad = function() {
+			onValidate = function(e, data) {
+				e.preventDefault();
+				
+				Tawk_API.addEvent('message', data);
+
+				var alert = $('#thxMessageAlert');
+				alert.addClass('active');
+				setTimeout(alert.removeClass.bind(alert, 'active'), 5000);
+
+				Tawk_API.maximize();
+			};
+		};
+
+		// Click on offer order button
+		$('.btn-order').on('click', function onOrderClicked(e) {
+			e.preventDefault();
+
+			var orderType = $(e.delegateTarget).data('event');
+			Tawk_API.addEvent('click-' + orderType);
+
+			orderModal.modal('show');
+		});
+
+		// Validate message popup
+		$('.modal-footer .btn-primary', orderModal).on('click', function onModalValidateClicked(e) {
+			orderModal.modal('hide');
+
+			var email = $('#user-mail', orderModal).val();
+			var message = $('#message', orderModal).val();
+
+			onValidate(e, {
+				contact: email,
+				message: message,
+				date: new Intl.DateTimeFormat('fr-FR', {year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric", second: "numeric", hour12: false}).format(new Date())
+			});
+		});
 	};
 
 	// Animations

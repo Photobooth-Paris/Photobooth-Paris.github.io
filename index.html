@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]>			<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>				 <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>				 <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -13,7 +13,7 @@
 		<meta name="keywords" content="photobooth, evg, evjf, enterrement de vie de garçon, enterrement de vie de jeune fille" />
 		<meta name="author" content="Pierre Cauhopé & Julien Molina" />
 
-	  <!-- 
+		<!-- 
 		//////////////////////////////////////////////////////
 
 		FREE HTML5 TEMPLATE 
@@ -27,7 +27,7 @@
 		//////////////////////////////////////////////////////
 		 -->
 
-	  <!-- Facebook and Twitter integration -->
+		<!-- Facebook and Twitter integration -->
 		<meta property="og:title" content=""/>
 		<meta property="og:image" content=""/>
 		<meta property="og:url" content=""/>
@@ -84,22 +84,22 @@
 		<header role="banner" id="fh5co-header">
 			<div class="container">
 				<!-- <div class="row"> -->
-			    <nav class="navbar navbar-default">
+					<nav class="navbar navbar-default">
 					<div class="navbar-header">
 						<!-- Mobile Toggle Menu Button -->
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
 						<a class="navbar-brand" href="index.html">Photobooth Parisien</a> 
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
-					  <ul class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav navbar-right">
 						<li class="disabled"><a href="#" data-nav-section="home"><span>Accueil</span></a></li>
 						<li class="active"><a href="#" data-nav-section="about"><span>À propos</span></a></li>
 						<li class="disabled"><a href="#" data-nav-section="device-hd"><span>Borne HD</span></a></li>
 						<li><a href="#" data-nav-section="device-fun"><span>Borne Fun</span></a></li>
 						<li><a href="#" data-nav-section="testimonials"><span>Témoignages</span></a></li>
-					  </ul>
+						</ul>
 					</div>
-			    </nav>
+					</nav>
 				<!-- </div> -->
 			</div>
 		</header>
@@ -128,7 +128,7 @@
 					</div>
 				</div>
 
-				<!-- You may change the background color here.  -->
+				<!-- You may change the background color here.	-->
 				<div class="item" style="background: #38569f;">
 					<div class="container" style="position: relative;">
 						<div class="row">
@@ -286,7 +286,7 @@
 											<li>A récupérer à Paris</li>
 											<li>&nbsp;</li>
 										</ul>
-										<a href="mailto:pierre@photobooth.paris?Subject=Commander%20le%20photobooth%20fun%20pour%20une%20soir%C3%A9e" class="btn btn-default btn-sm btn-order">Commander</a>
+										<a href="mailto:pierre@photobooth.paris?subject=Commander%20le%20photobooth%20fun%20pour%20une%20soir%C3%A9e" class="btn btn-default btn-sm btn-order" data-event="order-one-day">Commander</a>
 									</div>
 								</div>
 								<div class="col-md-6">
@@ -306,11 +306,49 @@
 											<li>Livraison chronospost</li>
 											<li class="plus"></i>Kit accessoires</li>
 										</ul>
-										<a href="mailto:pierre@photobooth.paris?Subject=Commander%20le%20photobooth%20fun%20pour%20le%20week-end" class="btn btn-default btn-sm btn-order">Commander</a>
+										<a href="mailto:pierre@photobooth.paris?subject=Commander%20le%20photobooth%20fun%20pour%20le%20week-end" class="btn btn-default btn-sm btn-order" data-event="order-week-end">Commander</a>
 									</div>
 								</div>
 							</div>
 						</div>
+
+						<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="orderModalLabel">Nous contacter</h4>
+									</div>
+									<div class="modal-body">
+										<form class="form-horizontal">
+											<div class="form-group">
+												<label for="user-mail" class="col-sm-3 control-label">Votre email:</label>
+												<div class="col-sm-9">
+													<input type="email" class="form-control" id="user-mail" aria-describedby="helpMail">
+													<span id="helpMail" class="help-block small">Uniquement pour vous recontacter...</span>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="message" class="col-sm-3 control-label">Message:</label>
+												<div class="col-sm-9">
+													<textarea class="form-control" rows="3" id="message" aria-describedby="helpMessage"></textarea>
+													<span id="helpMessage" class="help-block small">Précisez votre demande, on vous répond au plus vite !</span>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+										<a href="mailto:pierre@photobooth.paris?subject=Informations" class="btn btn-primary">Envoyer</a>
+									</div>
+								</div><!-- /.modal-content -->
+							</div><!-- /.modal-dialog -->
+						</div><!-- /.modal -->
+
+						<div id="thxMessageAlert" class="alert alert-success" role="alert">
+							Merci pour votre message, on vous répond au plus vite.<br/><br/>Vous pouvez aussi essayer d'utiliser notre chat en bas à droite de votre écran.
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -367,7 +405,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<p class="copyright text-center">&copy; 2015 Free <a href="index.html">Crew</a>. All Rights Reserved. <br> Free HTML5 Template by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> | Images by <a href="http://pexels.com/" target="_blank">Pexels</a> &amp;  <a href="http://unsplash.com/" target="_blank">Unsplash</a></p>
+						<p class="copyright text-center">&copy; 2015 Free <a href="index.html">Crew</a>. All Rights Reserved. <br> Free HTML5 Template by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> | Images by <a href="http://pexels.com/" target="_blank">Pexels</a> &amp; <a href="http://unsplash.com/" target="_blank">Unsplash</a></p>
 					</div>
 				</div>
 				<!--
